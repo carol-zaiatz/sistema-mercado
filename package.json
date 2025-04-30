@@ -1,20 +1,24 @@
 {
   "name": "mercado_django",
   "version": "1.0.0",
-  "description": "",
+  "description": "Projeto web desenvolvido com Django que simula um sistema de gestão de produtos e vendas, incluindo funcionalidades como:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:e2e": "cypress open"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Koebaptista/mercado_django.git"
+    "url": "git+https://github.com/carol-zaiatz/sistema-mercado.git"
   },
+  "bugs": {
+    "url": "https://github.com/carol-zaiatz/sistema-mercado/issues"
+  },
+  "homepage": "https://github.com/carol-zaiatz/sistema-mercado#readme",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Koebaptista/mercado_django/issues"
-  },
-  "homepage": "https://github.com/Koebaptista/mercado_django#readme"
+  "devDependencies": {
+    "cypress": "^14.3.2"
+  }
 }

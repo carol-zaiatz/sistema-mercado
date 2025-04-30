@@ -1,26 +1,43 @@
-# Python
+# ----------------------------
+# Python / Django
+# ----------------------------
 *.pyc
 *.pyo
 *.pyd
-__pycache__
-*.pyd
+__pycache__/
 *.db
 *.sqlite3
-
-# Django
 *.log
-local_settings.py
 db.sqlite3
+local_settings.py
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# PyCharm
-.idea/
-
-# VSCode
-.vscode/
-
-# Environment
+# ----------------------------
+# Ambientes virtuais
+# ----------------------------
+env/
+venv/
+.venv/
 myenv/
-.env/
+.env
+.env.*
+
+# ----------------------------
+# IDEs / editores
+# ----------------------------
+.vscode/
+.idea/
+.ipynb_checkpoints/
+
+# ----------------------------
+# Node.js / Cypress
+# ----------------------------
+node_modules/
+package-lock.json
+cypress/screenshots/
+cypress/videos/
+
+# ----------------------------
+# Sistema operacional
+# ----------------------------
+.DS_Store
+Thumbs.db
