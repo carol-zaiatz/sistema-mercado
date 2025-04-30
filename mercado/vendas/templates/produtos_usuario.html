@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Meus Produtos{% endblock %}
+
+{% block content %}
+<style>
+    .btn-vermais {
+        background-color: #3EAFCE;
+        color: white;
+        transition: background-color 0.3s;
+    }
+
+    .btn-vermais:hover {
+        background-color: #b0b0b0;
+        color: white;
+    }
+
+    .btn-editar {
+        background-color: #202020;
+        color: white;
+    }
+
+    .btn-editar:hover {
+        background-color: #3a3a3a;
+        color: white;
+    }
+
+    .btn-excluir {
+        background-color: #d11a2a;
+        color: white;
+    }
+
+    .btn-excluir:hover {
+        background-color: #a60f1e;
+        color: white;
+    }
+
+    .acoes-produto {
+        display: none;
+        margin-top: 10px;
+    }
+</style>
+
+
+
+<div class="container py-4">
+    <h1>Meus Produtos</h1>
+
+    <!-- Botão para adicionar produto -->
+    <a href="{% url 'adicionar_produto' %}" class="btn  mb-4">Adicionar Novo Produto</a>
+
+    <!-- Exibir os produtos em cards -->
+    <div class="row">
+        {% for produto in produtos %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ produto.nome }}</h5>
+                    <p class="card-text">{{ produto.descricao }}</p>
+                    <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+
+                    <!-- Botão Ver mais -->
+                    <button class="btn btn-vermais" onclick="toggleAcoes({{ produto.id }})">Ver mais</button>
+
+                    <!-- Ações de editar e excluir -->
+                    <div class="acoes-produto" id="acoes-{{ produto.id }}">
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <div class="p-1 border rounded">
+                                    <form action="{% url 'excluir_produto' produto.id %}" method="POST">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn btn-danger w-100">Excluir</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="p-1 border rounded">
+                                    <a href="{% url 'editar_produto' produto.id %}" class="btn btn-warning w-100">Editar</a>
+                                </div>
+                            </div>
+                
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- JavaScript para toggle das ações -->
+<script>
+    function toggleAcoes(id) {
+        const acoes = document.getElementById(`acoes-${id}`);
+        acoes.style.display = acoes.style.display === 'none' || acoes.style.display === '' ? 'block' : 'none';
+    }
+</script>
+{% endblock %}

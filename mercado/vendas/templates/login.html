@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="left">
+      <div class="auth-form">
+        <div class="auth-title">Faça Login</div>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <div class="form-field">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {{ form.username.errors }}
+          </div>
+          <div class="form-field">
+            {{ form.password.label_tag }}
+            {{ form.password }}
+            {{ form.password.errors }}
+          </div>
+          <div style="text-align: center; font-size: 13px;">
+            <a href="#">Esqueceu a senha?</a>
+          </div>
+          <br>
+          <button type="submit">ENTRAR</button>
+        </form>
+      </div>
+    </div>
+    <div class="right">
+      <div>
+        <i class="fas fa-shopping-cart fa-3x" style="margin-bottom: 20px;"></i>
+        <div class="cta-title">Comece agora</div>
+        <div class="cta-text">Crie uma conta ou se<br>cadastre no site!</div>
+        <a href="{% url 'register' %}" class="btn-outline">CADASTRE-SE</a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #DFDFDF;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      opacity: 0;
+      transition: opacity 0.6s ease-in;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .auth-container {
+      width: 1000px;
+      height: 650px;
+      margin: 50px auto;
+      display: flex;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .left, .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left {
+      background-color: #ffffff;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .right {
+      background-color: #202020;
+      color: white;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .auth-form {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .auth-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .cta-text {
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+
+    .btn-outline {
+      background-color: #2B2B2B;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 40px;
+      text-decoration: none;
+      border-radius: 20px;
+      display: inline-block;
+    }
+
+    .form-field {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #202020;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 50%;
+      border-radius: 40px;
+      font-weight: regular;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3EAFCE;
+    }
+
+    a {
+      color: #202020;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}Compra Realizada{% endblock %}
+
+{% block content %}
+<div class="container py-4 text-center">
+    <h1>🎉 Compra Realizada com Sucesso!</h1>
+    <p>Obrigado por sua compra.</p>
+    <a href="{% url 'index' %}" class="btn btn-primary mt-3">Voltar à Loja</a>
+</div>
+{% endblock %}

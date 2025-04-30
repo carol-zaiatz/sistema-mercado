@@ -1,0 +1,305 @@
+/* Estilos globais */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #DFDFDF;
+    margin: 0;
+    padding: 0;
+}
+
+  .auth-container {
+    width: 800px;
+    height: 550px;
+    margin: 50px auto;
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .left, .right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+  }
+  
+  .left {
+    background-color: #ffffff;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .right {
+    background-color: #000000;
+    color: white;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .auth-form {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .auth-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .cta-title {
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .cta-text {
+    font-size: 16px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-outline {
+    background-color: #2B2B2B;
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 20px;
+    display: inline-block;
+  }
+  
+  .form-field {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    height: auto;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Botão de logout */
+form button {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+form button:hover {
+    background-color: #c82333;
+}
+
+/* Cards de produtos */
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cards responsivos */
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ajusta a imagem ao tamanho do card */
+    border-bottom: 1px solid #ddd;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 4px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* Estilos do Header e Footer */
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Formulários */
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+form label {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+form input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-top: 5px;
+}
+
+/* Botão de login e cadastro */
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #757575;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    padding: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    text-decoration: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.btn-google:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-google img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+}
+
+/* Container para centralizar os formulários */
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Estilo do carrinho */
+.table th, .table td {
+    text-align: center;
+}
+
+.table th {
+    background-color: #343a40;
+    color: white;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+/* Estilo para os modais de edição e exclusão de produtos */
+.modal-body a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-body form {
+    display: block;
+}
+
+.modal-body button {
+    width: 100%;
+}
+
+/* Estilos para os botões de navegação e interatividade */
+.nav-link {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes para o layout responsivo */
+@media screen and (max-width: 768px) {
+    .row {
+        grid-template-columns: 1fr 1fr; /* Para telas menores, usa dois cards por linha */
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .row {
+        grid-template-columns: 1fr; /* Para telas muito pequenas, usa um card por linha */
+    }
+}
+
+

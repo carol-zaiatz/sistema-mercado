@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="left">
+      <div>
+        <i class="fas fa-shopping-cart fa-3x" style="margin-bottom: 20px;"></i>
+        <div class="cta-title">Bem-Vindo de Volta!</div>
+        <div class="cta-text">Já tem uma conta no aplicativo?<br>Faça login e permaneça conectado!</div>
+        <a href="{% url 'login' %}" class="btn-outline">Login</a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="auth-form">
+        <div class="auth-title">Crie sua Conta</div>
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.non_field_errors }}
+          <div class="form-field">
+            {{ form.username.label_tag }}
+            {{ form.username }}
+            {{ form.username.errors }}
+          </div>
+          <div class="form-field">
+            {{ form.email.label_tag }}
+            {{ form.email }}
+            {{ form.email.errors }}
+          </div>
+          <div class="form-field">
+            {{ form.password1.label_tag }}
+            {{ form.password1 }}
+            {{ form.password1.errors }}
+          </div>
+          <div class="form-field">
+            {{ form.password2.label_tag }}
+            {{ form.password2 }}
+            {{ form.password2.errors }}
+          </div>
+          <button type="submit">CADASTRAR</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    body {
+      background-color: #DFDFDF;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      opacity: 0;
+      transition: opacity 0.6s ease-in;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .auth-container {
+      width: 1000px;
+      height: 650px;
+      margin: 50px auto;
+      display: flex;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .left, .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .left {
+      background-color: #202020;
+      color: white;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .right {
+      background-color: #ffffff;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .auth-form {
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .auth-form input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .auth-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .cta-title {
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+
+    .cta-text {
+      font-size: 16px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+    }
+
+    .btn-outline {
+      background-color: #2B2B2B;
+      color: white;
+      border: 2px solid white;
+      padding: 10px 60px;
+      text-decoration: none;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .form-field {
+      text-align: left;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background-color: #202020;
+      color: white;
+      border: none;
+      padding: 12px;
+      width: 50%;
+      border-radius: 40px;
+      font-weight: regular;
+      font-size: 17px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3EAFCE;
+    }
+
+    a {
+      color: #202020;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+</body>
+</html>

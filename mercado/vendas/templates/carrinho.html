@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Carrinho de Compras{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">Carrinho de Compras</h1>
+
+    {% if cart_items %}
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in cart_items %}
+            <tr>
+                <td>{{ item.produto.nome }}</td>
+                <td>R$ {{ item.produto.preco }}</td>
+                <td>{{ item.quantidade }}</td>
+                <td>R$ {{ item.total }}</td>
+                <td>
+                    <form method="POST" action="{% url 'remover_do_carrinho' item.id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-danger btn-sm">Remover</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <div class="d-flex justify-content-between">
+        <h3>Total: R$ {{ total }}</h3>
+        <form method="POST" action="{% url 'finalizar_compra' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-success">Finalizar Compra</button>
+        </form>
+    </div>
+
+    {% else %}
+    <p>Seu carrinho está vazio.</p>
+    {% endif %}
+</div>
+{% endblock %}

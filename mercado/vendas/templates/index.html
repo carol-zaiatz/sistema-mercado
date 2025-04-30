@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial - Mercado{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+    <h1 class="mb-4">Bem-vindo ao Mercado!</h1>
+    <div class="row">
+        {% for produto in produtos %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <!-- Exibe a imagem do produto -->
+                
+
+                <div class="card-body">
+                    <h5 class="card-title">{{ produto.nome }}</h5>
+                    <p class="card-text">{{ produto.descricao }}</p>
+                    <p class="card-text">Preço: R$ {{ produto.preco }}</p>
+
+                    <!-- Botão para adicionar ao carrinho -->
+                    <form action="{% url 'adicionar_ao_carrinho' produto.id %}" method="POST" id="adicionarCarrinhoForm">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>Nenhum produto disponível no momento.</p>  <!-- Mensagem caso não haja produtos -->
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
