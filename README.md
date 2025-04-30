@@ -54,22 +54,8 @@ Projeto web desenvolvido com Django que simula um sistema de gestão de produtos
 
 ---
 
-### Testes
-
 ##  Testes de backend (unitários, API, E2E funcional):
     npm install         # instala Cypress
     npx cypress open    # abre a interface interativa
 
----
 
-### Estrutura de pastas
-    mercado_django/
-    ├── mercado/               # App Django principal
-    ├── cypress/               # Testes E2E com Cypress
-    │   └── e2e/
-    ├── templates/             # HTMLs
-    ├── static/                # CSS, JS
-    ├── tests_*.py             # Testes com Pytest
-    ├── requirements.txt
-    ├── README.md
-    └── .gitignore
