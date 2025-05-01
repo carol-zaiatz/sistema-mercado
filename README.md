@@ -58,4 +58,66 @@ Projeto web desenvolvido com Django que simula um sistema de gestão de produtos
     npm install         # instala Cypress
     npx cypress open    # abre a interface interativa
 
+# Evidências dos Testes — Sistema Mercado
+
+Este documento apresenta as evidências de execução dos testes realizados no projeto `sistema-mercado`, incluindo testes unitários, de API e E2E.
+
+---
+
+## Ferramentas Utilizadas
+
+| Tipo de Teste   | Ferramenta       |
+|------------------|------------------|
+| Testes Unitários | Pytest           |
+| Testes de API    | Pytest (DRF)     |
+| Testes E2E       | Cypress           |
+
+---
+
+## Ambiente de Execução
+
+- macOS (MacBook de desenvolvimento)
+- Python 3.13
+- Django 5.2
+- Cypress 13+
+- Node.js 20+
+- npm 10+
+
+---
+
+## Execução dos Testes
+
+###  Pytest
+
+- Todos os testes unitários e de API foram executados com o comando:
+
+```bash
+pytest > pytest_log.txt
+```
+## Cypress (E2E)
+npx cypress open
+# ou
+npm run test:e2e
+
+Teste principal: cadastro_login_compra.cy.js
+
+Fluxo testado:
+
+    Cadastro de novo usuário
+
+    Login automático
+
+    Acesso à tela inicial
+
+    Adição de produto ao carrinho
+
+    Finalização de compra
+
+V    erificação de sucesso
+
+Evidências:
+
+    Prints de execução: cypress/screenshots/ (em caso de falha)
+
+    Resultado final visível na interface Cypress
 
