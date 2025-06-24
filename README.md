@@ -113,7 +113,7 @@ Fluxo testado:
 
     Finalização de compra
 
-V    erificação de sucesso
+Verificação de sucesso
 
 Evidências:
 
